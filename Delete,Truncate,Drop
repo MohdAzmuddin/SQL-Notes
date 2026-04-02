@@ -1,0 +1,45 @@
+
+## 🔹 1. DELETE
+* Used to **remove specific rows** from a table
+* You can use **WHERE condition**
+* Data can be **rolled back** (if transaction is used)
+* Table structure **remains**
+
+✅ Example:
+
+```sql
+DELETE FROM students WHERE id = 1;
+```
+👉 Deletes only the row where `id = 1`
+
+## 🔹 2. TRUNCATE
+
+* Used to **delete all rows** from a table
+* **No WHERE condition allowed**
+* Faster than DELETE (because it doesn’t log each row)
+* Cannot be rolled back (in most cases)
+* Table structure **remains**
+
+✅ Example:
+
+```sql
+TRUNCATE TABLE students;
+```
+
+👉 Deletes **all data**, but table still ---
+
+## 🔹 3. DROP
+
+* Used to **delete entire table**
+* Removes **data + structure**
+* Cannot be rolled back
+* Table is completely **gone**
+
+| Feature         | DELETE  | TRUNCATE   | DROP              |
+| --------------- | ------- | ---------- | ----------------- |
+| Deletes rows    | ✅ Yes   | ✅ All rows | ❌ (deletes table) |
+| WHERE clause    | ✅ Yes   | ❌ No       | ❌ No              |
+| Rollback        | ✅ Yes   | ❌ No       | ❌ No              |
+| Speed           | Slow    | Fast       | Fast              |
+| Table structure | Remains | Remains    | Deleted           |
+
