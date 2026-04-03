@@ -1,0 +1,41 @@
+The **execution order of SQL** (especially for a `SELECT` query) is **different from how we write it**. This is very important for exams and interviews.
+## 🔹 Actual Execution Order (how SQL runs internally)
+
+👉 SQL executes in this order:
+
+1. **FROM** → choose table
+2. **JOIN** → combine tables (if any)
+3. **WHERE** → filter rows
+4. **GROUP BY** → group data
+5. **HAVING** → filter groups
+6. **SELECT** → select columns
+7. **DISTINCT** → remove duplicates
+8. **ORDER BY** → sort result
+9. **LIMIT / TOP** → limit rows
+
+---
+
+## 🔹 Easy Trick to Remember
+👉 **F J W G H S D O L**
+(FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT)
+
+### 🔄 Execution Flow:
+1. FROM students
+2. WHERE age > 18
+3. GROUP BY name
+4. HAVING COUNT(*) > 1
+5. SELECT name, COUNT(*)
+6. ORDER BY name
+
+
+## 🔹 Simple Definition (Exam Ready)
+
+👉 **SQL execution order is the sequence in which a SQL query is processed internally by the database, starting from FROM and ending with ORDER BY/LIMIT.**
+
+
+
+
+
+
+
+
